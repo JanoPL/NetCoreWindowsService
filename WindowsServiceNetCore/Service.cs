@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Timers;
 using Topshelf;
 
@@ -13,9 +11,8 @@ namespace WindowsServiceNetCore
         public void Log(string message)
         {
             WriteToFile(message);
-            
         }
-        
+
         public bool Start(HostControl hostControl)
         {
             Log($"Start service at: {DateTime.Now}");
@@ -42,8 +39,9 @@ namespace WindowsServiceNetCore
             }
 
             string filePath = AppDomain.CurrentDomain.BaseDirectory + "\\Logs\\log.txt";
+
             if (!File.Exists(filePath)) {
-                using(StreamWriter sw = File.CreateText(filePath)) {
+                using (StreamWriter sw = File.CreateText(filePath)) {
                     sw.WriteLine(message);
                 }
             } else {

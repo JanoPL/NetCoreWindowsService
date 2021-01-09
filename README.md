@@ -15,10 +15,15 @@ install application
   \bin\Release\netcoreapp3.1\win-x64\WindowsServiceNetCore.exe install
 ```
 
+### Uninstall Service
+
+```bash
+	\bin\Release\netcoreapp3.1\win-x64\WindowsServiceNetCore.exe uninstall
+```
+
 ### Checking service
 
 check in service.msc if service is started and is running
-
 
 ```bash
   service.msc
